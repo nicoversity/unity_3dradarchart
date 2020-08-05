@@ -231,7 +231,7 @@ For both provided `Scenes`, please have a look into the `Demo_3DRadarChart.cs` s
 
 
 ## Media
-w
+
 ### Screenshots - Extended (VR and Leap Motion Interaction)
 
 #### VR and Leap Motion Setup - Overview
