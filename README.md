@@ -2,8 +2,18 @@
 
 The purpose of this project is to provide a data-agnostic software module for a three-dimensional (3D), interactive data visualization in the format of a **3D Radar Chart**, implemented for Unity3D.
 
+### Table of contents
+* [Scientific Reference, and further information](#Scientific-Reference)
+* [Features](#Features)
+* [Dependencies](#Dependencies)
+* [How to use](#How-to-use)
+* [Quickstart guide](#Quickstart-guide)
+* [Media](#Media)
+* [Further development](#Further-development)
+* [License](#License)
 
-#### Scientific Reference
+
+## Scientific Reference
 
 The project presented here has been used within the following scientific publication:
 
@@ -27,17 +37,15 @@ The annotated screenshot below illustrates the concept of such a *3D Radar Chart
 
 ![Annotated screenshot: Data visualization as a 3D Radar Chart as provided within this repository](docs/annotatedScreenshot-3dRadarChart.png)
 
-For further in-depth explanations, please refer to the scientific reference listed at the beginning.
-
 
 ## Features
 
 * Visualization of *time-oriented data as a 3D Radar Chart*.
-* Toggle of a *Time Slice* fur further inspection of the 3D Radar Chart's data variable axes and time-oriented data.
+* Toggle of a *Time Slice* for further inspection of the 3D Radar Chart's data variable axes and time-oriented data.
 * Toggle of an *Information Window* for further inspection of the 3D Radar Chart's data variable axes and time-oriented data.
 * *Rotation* of the 3D Radar Chart in place.
 * Selection of a *Range* within the time-series data.
-* Interaction through (1) only keyboard input (*basic*), and (2) Leap Motion hand controller in a VR setup (*extended*).
+* Interaction through (1) keyboard input (*basic*), and (2) Leap Motion hand controller in a VR setup (*extended*).
 * Implementation: One class `ThreeDimRadarChartInterface.cs` as main interface for configuration and interaction with the 3D Radar Chart.
 * Implementation: Input data (in `.csv` data format) can be loaded both from local or remote sources.
 * Implementation: Color configuration (in `.csv` data format) for the input data's individual `dimension` values, coded in `hexadecimal` notation, can be loaded both from local or remote sources.
@@ -50,9 +58,9 @@ For further in-depth explanations, please refer to the scientific reference list
 This project has been built using the following specifications (*basic*):
 
 * [Unity3D](https://unity3d.com) 2019.2.17f1 Personal
-* [Unity PolyExtruder](https://github.com/nicoversity/unity_polyextruder) for the purpose of dynamically creating 2D meshes used within several parts of the data visualization
+* [Unity PolyExtruder](https://github.com/nicoversity/unity_polyextruder) *by* Nico Reski, for the purpose of dynamically creating 2D meshes used within several parts of the data visualization
 
-In order to use the implemented virtual reality and Leap Motion support, the following specifications are required (*extended*):
+In order to use the implemented VR and Leap Motion support, the following specifications are required (*extended*):
 * [Leap Motion Core Assets v.4.4.0](https://developer.leapmotion.com/unity)
 * [Leap Motion Interaction Engine v.1.2.0](https://developer.leapmotion.com/unity)
 * [SteamVR Plugin 1.2.3](https://assetstore.unity.com/packages/templates/systems/steamvr-plugin-32647)
@@ -61,19 +69,17 @@ External hardware specifications have been used with the following specification
 * [Leap Motion Orion](https://developer.leapmotion.com/setup) v.4.0.0+52173, Firmware Revision v.1.7.0
 * [SteamVR](https://store.steampowered.com/steamvr), always up-to-date through Steam
 
-*Note:* Generally, Unity source code should work also within their Windows counterparts. Please check out the above stated dependencies for troubleshooting.
-
 
 ## How to use
 
 #### Import assets to Unity3D project
 
-In order to add the features presented in this repository to your Unity3D project, I recommend to add the assets by simply importing one of the pre-compiled `.unitypackage` modules to your Unity project. Two different `.unitypackage` modules are provided:
+In order to add the features presented in this repository to your Unity3D project, I recommend to add the assets by simply importing one of the pre-compiled `.unitypackage` packages to your Unity project. Two different `.unitypackage` packages are provided:
 
 1. `nicoversity-unity_3dradarchart-basic.unitypackage`: Contains the *3D Radar Chart* implementation for normal usage, without any immersive interfaces (no VR or Leap Motion assets and code are included). This is recommended for most users, who prefer to implement their own interaction mechanisms. An example for simple keyboard interaction is included. 
-2. `nicoversity-unity_3dradarchart-extended.unitypackage`: Contains the *basic 3D Radar Chart* implementation, plus the extensions to support VR (SteamVR, i.e., HTC Vive) and Leap Motion hand controller interaction. *Note:* This `.unitypackage` comes pre-compiled with all necessary *SteamVR* and *LeapMotion* Unity assets as listed in the *Dependencies* section. 
+2. `nicoversity-unity_3dradarchart-extended.unitypackage`: Contains the *basic 3D Radar Chart* implementation, plus the extensions to support VR (SteamVR, i.e., HTC Vive) and Leap Motion hand controller interaction. *Note:* This `.unitypackage` comes pre-compiled with all necessary *SteamVR* and *LeapMotion* Unity assets as listed in the [Dependencies](#*Dependencies) section.
 
-Alternatively, the repository directory `unity_src` features a directory titled `Unity3DRadarChart`, containing the source code (Unity project) of the complete *3D Radar Chart* implementation (basically the exported contents of the `nicoversity-unity_3dradarchart-extended.unitypackage` module).
+Alternatively, the repository directory `unity_src` features a directory titled `Unity3DRadarChart`, containing the source code (Unity project) of the complete *3D Radar Chart* implementation (basically the exported contents of the `nicoversity-unity_3dradarchart-extended.unitypackage` package).
 
 #### Input data
 
@@ -149,7 +155,7 @@ if (demo_TDRCInterface == null && mainCamera != null)
 
 #### Interaction: Keyboard
 
-The source code snippet below illustrates basic interaction with a 3D Radar Chart instance using keyboard input.
+The source code snippet below illustrates basic interaction with a 3D Radar Chart using keyboard input.
 
 ```cs
 // properties related to the 3D Radar Chart 
@@ -205,7 +211,7 @@ private void Update()
 
 ##### Configure ThreeDimRadarChartInterface to enable Leap Motion Interaction
 
-Generally, follow the overall flow of instantiation, configuration, and initialization of the `ThreeDimRadarChartInterface.cs` as described above, under consideration of the follow two edits:
+Generally, follow the overall flow of instantiation, configuration, and initialization of the `ThreeDimRadarChartInterface.cs` as described above, under consideration of the following two edits:
 
 ```cs
 // (1) The main camera needs to be set up to refer to the VR headset's camera in the Inspector, e.g., ... "[Camera Rig] -> Camera (head) -> Camera (eye)" in case of using the provided SteamVR assets
@@ -217,7 +223,7 @@ demo_TDRCInterface.cnfgVRLM_isEnabled = true;
 
 ##### VirtualRealityLeapMotionInterface.cs
 
-The `VirtualRealityLeapMotionInterface.cs` script, attached as a component, to the `VRLM_Player` prefab functions as the main interface for all VR and Leap Motion related interactions. Please use this script as a starting point in order to gain further insights in its (and all other related components) implementation.
+The `VirtualRealityLeapMotionInterface.cs` script, attached as a component to the `VRLM_Player` prefab, functions as the main interface for all VR and Leap Motion related interactions. Please use this script as a starting point in order to gain further insights in its implementation.
 
 #### Further documentation
 
@@ -228,6 +234,24 @@ Additionally, the following `Scenes` are provided for demonstrative purposes:
 * `3DRadarChart-extended`: Extended setup to support VR and Leap Motion interaction.
 
 For both provided `Scenes`, please have a look into the `Demo_3DRadarChart.cs` script to gain a practical usage example in source code.
+
+
+### Quickstart guide
+
+In order to setup a new Unity project and try the provided demo scene (*basic*), simply follow these steps:
+
+1. Create a new Unity project using the normal *3D* template, preferably using Unity version 2019.2.x or higher.
+2. Import all contents of the downloaded `nicoversity-unity_3dradarchart-basic.unitypackage` package, by navigating to `Assets -- Import Package -- Custom Package...` in your Unity menu, and selected the package.
+3. Once the import is complete, open the demo scene by navigating to the `Assets/nicoversity/threedimradarchart/_scenes/` directory in your Unity project, and open `3DRadarChart-basic.unity`.
+4. Push the `Play` button in Unity, and initialize a *3D Radar Chart* from the provided example data by pressing the `Q` key on your keyboard. (*Note*: The GameObject representing the newly created *3D Radar Chart* is named `TDRCInterface_1`, and attached as a Child GameObject to `DEMO_3DRadarChart` in the Scene Hierarchy.)
+5. Once loaded, basic keyboard interaction is possible using the following keys:
+    * `A` - Toggle focus on/off
+    * `Left / Right Arrow` - Rotate left and right
+    * `Up / Down Arrow` - Move *Time Slice* up and down in the time-series data
+    * `S` - Iterate through time range selection states
+6. (*Optional*) Investigate the `Demo_3DRadarChart.cs` script, attached to the `Demo_3DRadarChart` GameObject in the Scene Hierarchy. This should serve as a good starting point to investigate the implementation and provided features of the *3D Radar Chart*.
+
+In order to try the VR and Leap Motion demo setup, simply follow the steps above, but refer to the `-extended` named files. Considering you are using a *HTC Vive* (v1) with a *Leap Motion* controller attached, and have the appropriate firmware installed (see [Dependencies](#Dependencies)), it should work out of the box.
 
 
 ## Media
@@ -253,19 +277,20 @@ For both provided `Scenes`, please have a look into the `Demo_3DRadarChart.cs` s
 
 As part of my work within our university's research group, an annotated, interactive 360 degree web viewer is available online, demonstrating immersive visualization and interaction with the 3D Radar Chart: [vrxar.lnu.se/apps/radartimeui-360/](https://vrxar.lnu.se/apps/radartimeui-360/)
 
-*Note:* The *Annotation Menu* button of the right-hand menu is *not* part of of the project presented here.
+*Note:* The *Annotation Menu* button of the right-hand menu is *not* part of the project presented here.
 
 ### Video demo
 
 A video illustrating the 3D Radar Chart is available online: [vimeo.com/vrxar/vr-3dradarchart-wip2020](http://vimeo.com/vrxar/vr-3dradarchart-wip2020)
 
-*Note:* The *Annotation Menu* button of the right-hand menu is *not* part of of the project presented here.
+*Note:* The *Annotation Menu* button of the right-hand menu is *not* part of the project presented here.
 
 
-## Known issues / Areas for further development
+## Further development
 
-1. Numerical input data values (`value`) currently implemented to handle `int` data type values. Support for `float` data types could be implemented in the future.
+Following, a list of known issues and some thoughts for further development:
 
+1. Numerical input data values (`value` column in the `.csv` input data file) are currently implemented to handle `int` data type values. Support for `float` data types could be implemented in the future.
 2. Interaction with multiple 3D Radar Charts in the Scene (setting focus, managing charts' state, etc.) should be adjusted based on own preferences and needs. Implementation in `VirtualRealityLeapMotionInterface.cs` could be a good starting point.
 
 
