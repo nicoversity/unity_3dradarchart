@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/*
+ * ThreeDimRadarChartInterface.cs
+ *
+ * Supported Unity version: 2019.2.17f1 Personal (tested)
+ *
+ * Author: Nico Reski
+ * Web: https://reski.nicoversity.com
+ * Twitter: @nicoversity
+ * GitHub: https://github.com/nicoversity
+ * 
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
