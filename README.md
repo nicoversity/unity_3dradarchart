@@ -17,7 +17,7 @@ The purpose of this project is to provide a data-agnostic software module for a 
 
 The project presented here has been used within the following scientific publication:
 
-* Reski, N., Alissandrakis, A., and Kerren, A. 2020. Exploration of Time-Oriented Data in Immersive Virtual Reality Using a 3D Radar Chart Approach, in *Proceedings of The 11th Nordic Conference on Human-Computer Interaction* (NordiCHI 2020). October 25-29, 2020, Tallinn, Estonia. DOI: 10.1145/3419249.3420171
+* Nico Reski, Aris Alissandrakis, and Andreas Kerren. 2020. Exploration of Time-Oriented Data in Immersive Virtual Reality Using a 3D Radar Chart Approach, in *Proceedings of the 11th Nordic Conference on Human-Computer Interaction: Shaping Experiences, Shaping Society* (NordiCHI 2020). October 25-29, 2020, Tallinn, Estonia. pp 33:1-33:11. DOI: [10.1145/3419249.3420171](https://doi.org/10.1145/3419249.3420171)
 
 #### Background / Motivation
 
